@@ -1,10 +1,16 @@
 @import "tailwindcss";
 
+/* Light theme using provided palette:
+   primary: #1a73e8 (blue)
+   secondary: #fbbc05 (yellow)
+   accent: #34a853 (green)
+*/
 :root {
-  --color-primary: #000000;
-  --color-secondary: #FFFFFF;
-  --color-accent: #3B82F6;
-  --color-background: #FFFFFF;
+  --color-primary: #1a73e8;
+  --color-secondary: #fbbc05;
+  --color-accent: #34a853;
+  --color-background: #ffffff;
+  --color-text: #111827; /* gray-900 */
 }
 
 * {
@@ -18,9 +24,33 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   background-color: var(--color-background);
-  color: var(--color-primary);
+  color: var(--color-text);
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* Utility overrides for links/buttons */
+a {
+  color: var(--color-primary);
+}
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 1px;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-secondary) 50%, transparent);
+}
+
+/* Basic prose styling for markdown content (if needed later) */
+.prose h1,
+.prose h2,
+.prose h3 {
+  color: #0f172a;
+}
+.prose p {
+  color: #334155;
 }
